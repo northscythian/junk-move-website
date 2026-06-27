@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Junk & Move — Вывоз мусора и переезды в Канаде</title>
-    <meta name="description" content="Профессиональный вывоз мусора и услуги переезда в Канаде. Честные цены, экологичная утилизация, работаем быстро.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Профессиональный вывоз мусора и услуги переезда в Канаде. Честные цены, экологичная утилизация, работаем быстро. Торонто, Ванкувер, Монреаль." />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Junk & Move — Вывоз мусора и переезды в Канаде" />
+    <meta property="og:description" content="Профессиональный вывоз мусора и услуги переезда в Канаде. Честные цены, экологичная утилизация, работаем быстро." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northscythian.github.io/junk-move-website/" />
+    <meta property="og:image" content="https://northscythian.github.io/junk-move-website/images/og-image.jpg" /> <!-- замените на реальное фото -->
+
+    <!-- Микроразметка Schema.org (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Junk & Move",
+        "image": "https://northscythian.github.io/junk-move-website/images/logo.jpg",
+        "description": "Профессиональный вывоз мусора и услуги переезда в Канаде. Честные цены, экологичная утилизация.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Торонто",
+            "addressCountry": "Канада"
+        },
+        "telephone": "+1234567890",
+        "email": "info@junkandmove.ca",
+        "openingHours": "Mo-Su 08:00-20:00",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        },
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Дополнительные стили только для главной (можно оставить, а можно перенести в style.css) -->
+    <style>
+        /* Классы для кнопок мессенджеров (вынесены из инлайна) */
+        .btn-wa {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-wa:hover {
+            background: #1da851;
+        }
+        .btn-tg {
+            background: #0088cc;
+            color: #fff;
+        }
+        .btn-tg:hover {
+            background: #006699;
+        }
+    </style>
 </head>
 <body>
-    <!-- ШАПКА -->
+    <!-- ========== ШАПКА ========== -->
     <header>
         <div class="container header-inner">
             <div class="logo">
@@ -31,7 +86,7 @@
         </div>
     </header>
 
-    <!-- ГЕРОЙ -->
+    <!-- ========== ГЕРОЙ ========== -->
     <section class="hero">
         <div class="container hero-inner">
             <div class="hero-text">
@@ -42,17 +97,17 @@
                     <a href="prices.html" class="btn btn-outline"><i class="fas fa-list"></i> Посмотреть цены</a>
                 </div>
                 <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
-                    <a href="https://wa.me/1234567890" class="btn btn-small" style="background:#25D366; color:#fff;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="https://t.me/junkandmove" class="btn btn-small" style="background:#0088cc; color:#fff;" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                    <a href="https://wa.me/1234567890" class="btn btn-small btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://t.me/junkandmove" class="btn btn-small btn-tg" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/hero.jpg" alt="Junk Removal and Moving" loading="lazy" onerror="this.style.display='none'">
+                <img src="images/hero.jpg" alt="Команда Junk & Move за работой по вывозу мусора и переездам" loading="lazy" onerror="this.style.display='none'">
             </div>
         </div>
     </section>
 
-    <!-- ПРЕИМУЩЕСТВА -->
+    <!-- ========== ПРЕИМУЩЕСТВА ========== -->
     <section class="advantages">
         <div class="container">
             <h2>Почему выбирают нас</h2>
@@ -81,7 +136,7 @@
         </div>
     </section>
 
-    <!-- СТАТИСТИКА -->
+    <!-- ========== СТАТИСТИКА ========== -->
     <section class="stats">
         <div class="container stats-grid">
             <div class="stat-item">
@@ -99,7 +154,7 @@
         </div>
     </section>
 
-    <!-- УСЛУГИ КРАТКО -->
+    <!-- ========== УСЛУГИ КРАТКО ========== -->
     <section class="services-preview">
         <div class="container">
             <h2>Наши услуги</h2>
@@ -120,7 +175,7 @@
         </div>
     </section>
 
-    <!-- ОТЗЫВЫ -->
+    <!-- ========== ОТЗЫВЫ ========== -->
     <section class="testimonials">
         <div class="container">
             <h2>Что говорят клиенты</h2>
@@ -137,7 +192,7 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ========== CTA ========== -->
     <section class="cta">
         <div class="container">
             <h2>Готовы к переезду или уборке?</h2>
@@ -146,7 +201,7 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
+    <!-- ========== ПОДВАЛ ========== -->
     <footer>
         <div class="container footer-inner">
             <div class="footer-col">
@@ -170,9 +225,9 @@
             <div class="footer-col">
                 <h4>Мы в соцсетях</h4>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -181,7 +236,7 @@
         </div>
     </footer>
 
-    <!-- Плавающие иконки -->
+    <!-- ========== ПЛАВАЮЩИЕ ИКОНКИ ========== -->
     <div class="floating-social">
         <a href="https://wa.me/1234567890" class="wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="https://t.me/junkandmove" class="tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
@@ -189,4 +244,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
