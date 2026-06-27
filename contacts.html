@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакты — Junk & Move</title>
-    <meta name="description" content="Свяжитесь с нами для вывоза мусора или переезда в Канаде. WhatsApp, Telegram, звонок или форма.">
+    <meta name="description" content="Свяжитесь с нами для вывоза мусора или переезда в Канаде. WhatsApp, Telegram, звонок или форма." />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="Контакты — Junk & Move" />
+    <meta property="og:description" content="Свяжитесь с нами для вывоза мусора или переезда в Канаде. WhatsApp, Telegram, звонок или форма." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northscythian.github.io/junk-move-website/contacts.html" />
+    <meta property="og:image" content="https://northscythian.github.io/junk-move-website/images/og-image.jpg" /> <!-- замените на реальное фото -->
+
+    <!-- Микроразметка Schema.org для контактов -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Контакты — Junk & Move",
+        "description": "Свяжитесь с нами для вывоза мусора или переезда в Канаде.",
+        "url": "https://northscythian.github.io/junk-move-website/contacts.html",
+        "telephone": "+1234567890",
+        "email": "info@junkandmove.ca",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Торонто",
+            "addressCountry": "Канада"
+        }
+    }
+    </script>
+
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Дополнительные стили для этой страницы -->
     <style>
-        /* Дополнительные стили только для страницы контактов */
         .contacts-hero {
             background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
             padding: 60px 0;
@@ -105,6 +133,26 @@
             min-width: 140px;
             justify-content: center;
         }
+        /* Классы для кнопок мессенджеров (вынесены из инлайна) */
+        .btn-wa {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-wa:hover {
+            background: #1da851;
+        }
+        .btn-tg {
+            background: #0088cc;
+            color: #fff;
+        }
+        .btn-tg:hover {
+            background: #006699;
+        }
+        /* Активная ссылка в меню */
+        .nav-menu .active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -117,7 +165,7 @@
     </style>
 </head>
 <body>
-    <!-- ШАПКА (такая же, как на всех страницах) -->
+    <!-- ШАПКА -->
     <header>
         <div class="container header-inner">
             <div class="logo">
@@ -130,7 +178,7 @@
                     <li><a href="movers.html">Movers</a></li>
                     <li><a href="prices.html">Цены</a></li>
                     <li><a href="about.html">О нас</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="contacts.html" class="active">Контакты</a></li>
                 </ul>
             </nav>
             <a href="tel:+1234567890" class="phone-btn"><i class="fas fa-phone"></i> +1 234 567 890</a>
@@ -183,10 +231,10 @@
 
                 <h3 style="margin-top: 40px; margin-bottom: 8px;">Напишите нам в мессенджеры</h3>
                 <div class="social-buttons-inline">
-                    <a href="https://wa.me/1234567890" class="btn" style="background: #25D366; color: #fff;" target="_blank">
+                    <a href="https://wa.me/1234567890" class="btn btn-wa" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
-                    <a href="https://t.me/junkandmove" class="btn" style="background: #0088cc; color: #fff;" target="_blank">
+                    <a href="https://t.me/junkandmove" class="btn btn-tg" target="_blank">
                         <i class="fab fa-telegram-plane"></i> Telegram
                     </a>
                 </div>
@@ -196,12 +244,13 @@
             <div class="contact-form-card">
                 <h2 style="margin-top: 0; margin-bottom: 8px;">Отправьте заявку</h2>
                 <p style="margin-bottom: 20px;">Заполните форму — мы перезвоним в течение 30 минут.</p>
+                <!-- ЗАМЕНИТЕ your_key на реальный ключ от Formspree -->
                 <form action="https://formspree.io/f/your_key" method="POST">
                     <label for="name"><i class="fas fa-user"></i> Ваше имя *</label>
-                    <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                    <input type="text" id="name" name="name" required placeholder="Иван Иванов" />
 
                     <label for="phone"><i class="fas fa-phone"></i> Телефон *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890">
+                    <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890" pattern="[\+\d\s\-\(\)]{10,}" title="Введите номер телефона (не менее 10 символов)" />
 
                     <label for="service"><i class="fas fa-concierge-bell"></i> Услуга</label>
                     <select id="service" name="service">
@@ -219,7 +268,7 @@
         </div>
     </div>
 
-    <!-- ПОДВАЛ (такой же, как на всех страницах) -->
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="container footer-inner">
             <div class="footer-col">
@@ -243,9 +292,9 @@
             <div class="footer-col">
                 <h4>Мы в соцсетях</h4>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
