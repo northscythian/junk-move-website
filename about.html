@@ -1,68 +1,224 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>О нас — Junk & Move</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Команда Junk & Move — профессионалы по вывозу мусора и переездам в Канаде. Работаем легально, экологично и с душой." />
+
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="О нас — Junk & Move" />
+    <meta property="og:description" content="Команда профессионалов по вывозу мусора и переездам в Канаде. Узнайте, кто мы и почему нам доверяют." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northscythian.github.io/junk-move-website/about.html" />
+    <meta property="og:image" content="https://northscythian.github.io/junk-move-website/images/og-image.jpg" /> <!-- замените на реальное фото -->
+
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Дополнительные стили только для этой страницы (можно вставить в style.css, но здесь я оставляю для наглядности) -->
+    <style>
+        /* About page specific */
+        .about-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .about-hero h1 {
+            margin-bottom: 12px;
+        }
+        .about-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 40px 0 60px;
+        }
+        .about-grid h2 {
+            margin-top: 0;
+        }
+        .trust-list {
+            list-style: none;
+            padding: 0;
+        }
+        .trust-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #eaeef2;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .trust-list li:last-child {
+            border-bottom: none;
+        }
+        .trust-list i {
+            color: var(--accent);
+            width: 24px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .cta-about {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-about h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .cta-about p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .cta-about .btn {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        .cta-about .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-hero {
+                padding: 40px 0 20px;
+            }
+            .cta-about {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ========== ШАПКА (единая) ========== -->
     <header>
         <div class="container header-inner">
-            <div class="logo"><span class="logo-icon">🚛</span><span class="logo-text">Junk & Move</span></div>
-            <nav><ul class="nav-menu">
-                <li><a href="junk-removal.html">Junk Removal</a></li>
-                <li><a href="movers.html">Movers</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul></nav>
-            <a href="tel:+1234567890" class="phone-btn">📞 +1 234 567 890</a>
-            <button class="burger" id="burger">☰</button>
+            <div class="logo">
+                <i class="fas fa-truck"></i>
+                <span>Junk & Move</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="about.html" class="active">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+1234567890" class="phone-btn"><i class="fas fa-phone"></i> +1 234 567 890</a>
+            <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <section class="page-content" style="padding:60px 0;">
+    <!-- ========== ЗАГОЛОВОК СТРАНИЦЫ ========== -->
+    <section class="about-hero">
         <div class="container">
-            <h1>🚛 О нас</h1>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;">
-                <div>
-                    <h2>Кто мы</h2>
-                    <p style="font-size:1.1rem;color:#555;">Junk & Move — молодая команда профессионалов в Канаде. Мы помогаем людям и компаниям избавляться от мусора и переезжать в новое место.</p>
-                    <p style="color:#555;margin-top:16px;">Мы начали с одного грузовика и желания делать жизнь людей проще. Сегодня у нас — проверенная команда, лицензии, страховка и сотни довольных клиентов.</p>
-                    
-                    <h2 style="margin-top:30px;">Наша миссия</h2>
-                    <p style="color:#555;">Сделать вывоз мусора и переезды простыми, честными и экологичными. Мы сортируем отходы, перерабатываем и жертвуем то, что может пригодиться другим.</p>
-                </div>
-                <div>
-                    <h2>Почему нам доверяют</h2>
-                    <ul style="list-style:none;padding:0;">
-                        <li style="padding:12px 0;border-bottom:1px solid #eee;">✅ <strong>Официальная регистрация</strong> — работаем легально</li>
-                        <li style="padding:12px 0;border-bottom:1px solid #eee;">✅ <strong>Страховка</strong> — ваше имущество защищено</li>
-                        <li style="padding:12px 0;border-bottom:1px solid #eee;">✅ <strong>Экологичность</strong> — перерабатываем до 70% мусора</li>
-                        <li style="padding:12px 0;border-bottom:1px solid #eee;">✅ <strong>Прозрачные цены</strong> — без скрытых платежей</li>
-                        <li style="padding:12px 0;">✅ <strong>Отзывы</strong> — реальные клиенты нас рекомендуют</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="background:#2F5597;color:#fff;padding:40px;border-radius:16px;text-align:center;margin-top:40px;">
-                <h2 style="color:#fff;">Работаем в Канаде</h2>
-                <p style="opacity:0.9;">Торонто, Ванкувер, Монреаль, Калгари и другие города</p>
-                <a href="contacts.html" class="btn btn-primary" style="background:#fff;color:#2F5597;margin-top:16px;">Связаться с нами</a>
-            </div>
+            <h1><i class="fas fa-users" style="color: var(--accent);"></i> О нас</h1>
+            <p>Узнайте, кто стоит за качественным сервисом вывоза мусора и переездов в Канаде.</p>
         </div>
     </section>
 
+    <!-- ========== ОСНОВНОЙ КОНТЕНТ ========== -->
+    <div class="container">
+        <div class="about-grid">
+            <!-- Левая колонка: Кто мы и миссия -->
+            <div>
+                <h2>Кто мы</h2>
+                <p style="font-size:1.1rem; color:var(--text-gray);">
+                    Junk & Move — молодая команда профессионалов в Канаде. Мы помогаем людям и компаниям избавляться от мусора и переезжать в новое место.
+                </p>
+                <p style="color:var(--text-gray); margin-top:16px;">
+                    Мы начали с одного грузовика и желания делать жизнь людей проще. Сегодня у нас — проверенная команда, лицензии, страховка и сотни довольных клиентов.
+                </p>
+
+                <h2 style="margin-top: 40px;">Наша миссия</h2>
+                <p style="color:var(--text-gray);">
+                    Сделать вывоз мусора и переезды простыми, честными и экологичными. Мы сортируем отходы, перерабатываем и жертвуем то, что может пригодиться другим.
+                </p>
+            </div>
+
+            <!-- Правая колонка: Почему нам доверяют -->
+            <div>
+                <h2>Почему нам доверяют</h2>
+                <ul class="trust-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>Официальная регистрация</strong> — работаем легально</li>
+                    <li><i class="fas fa-shield-alt"></i> <strong>Страховка</strong> — ваше имущество защищено</li>
+                    <li><i class="fas fa-recycle"></i> <strong>Экологичность</strong> — перерабатываем до 70% мусора</li>
+                    <li><i class="fas fa-tag"></i> <strong>Прозрачные цены</strong> — без скрытых платежей</li>
+                    <li><i class="fas fa-star"></i> <strong>Отзывы</strong> — реальные клиенты нас рекомендуют</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CTA (призыв к действию) ========== -->
+    <div class="container">
+        <div class="cta-about">
+            <h2><i class="fas fa-map-pin"></i> Работаем в Канаде</h2>
+            <p>Торонто, Ванкувер, Монреаль, Калгари и другие города — мы рядом с вами.</p>
+            <a href="contacts.html" class="btn btn-large"><i class="fas fa-phone"></i> Связаться с нами</a>
+        </div>
+    </div>
+
+    <!-- ========== ПОДВАЛ (единый) ========== -->
     <footer>
         <div class="container footer-inner">
-            <div class="footer-col"><h3>Junk & Move</h3><p>Профессиональный вывоз мусора и переезды в Канаде.</p></div>
-            <div class="footer-col"><h4>Услуги</h4><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="movers.html">Movers</a></li><li><a href="prices.html">Цены</a></li></ul></div>
-            <div class="footer-col"><h4>Контакты</h4><p>📞 +1 234 567 890</p><p>✉️ info@junkandmove.ca</p><p>📍 Торонто, Канада</p></div>
-            <div class="footer-col"><h4>Мы в соцсетях</h4><div class="social-links"><a href="#">Instagram</a> <a href="#">TikTok</a> <a href="#">Facebook</a></div></div>
+            <div class="footer-col">
+                <h3><i class="fas fa-truck" style="color: var(--accent);"></i> Junk & Move</h3>
+                <p>Профессиональный вывоз мусора и переезды в Канаде.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@junkandmove.ca</p>
+                <p><i class="fas fa-map-marker-alt"></i> Торонто, Канада</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Junk & Move. Все права защищены.</p></div>
+        <div class="footer-bottom">
+            <p>© 2026 Junk & Move. Все права защищены.</p>
+        </div>
     </footer>
+
+    <!-- ========== ПЛАВАЮЩИЕ ИКОНКИ МЕССЕНДЖЕРОВ ========== -->
+    <div class="floating-social">
+        <a href="https://wa.me/1234567890" class="wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/junkandmove" class="tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
