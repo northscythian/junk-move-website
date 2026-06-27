@@ -1,103 +1,306 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Цены — Junk & Move</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Прозрачные цены на вывоз мусора и переезды в Канаде. Никаких скрытых платежей. Стоимость зависит от объёма и времени." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Цены — Junk & Move" />
+    <meta property="og:description" content="Прозрачные цены на вывоз мусора и переезды в Канаде. Никаких скрытых платежей." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://northscythian.github.io/junk-move-website/prices.html" />
+    <meta property="og:image" content="https://northscythian.github.io/junk-move-website/images/og-image.jpg" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PriceSpecification",
+        "name": "Цены на услуги Junk & Move",
+        "description": "Прозрачные цены на вывоз мусора и переезды в Канаде."
+    }
+    </script>
+
+    <!-- Font Awesome & Inter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Дополнительные стили для этой страницы -->
+    <style>
+        .prices-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .prices-hero h1 {
+            margin-bottom: 12px;
+        }
+        .prices-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 30px 0 50px;
+        }
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            min-width: 500px;
+        }
+        .table-wrap th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-wrap td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eaeef2;
+        }
+        .table-wrap tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .table-wrap .price-col {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .table-wrap .center-col {
+            text-align: center;
+        }
+        .pricing-note {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 30px;
+        }
+        .pricing-note p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .pricing-note .highlight {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .cta-prices {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-prices h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .cta-prices p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .cta-prices .btn {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        .cta-prices .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .prices-hero {
+                padding: 40px 0 20px;
+            }
+            .table-wrap table {
+                font-size: 0.9rem;
+                min-width: 400px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 10px 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .table-wrap table {
+                font-size: 0.8rem;
+                min-width: 320px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 8px 10px;
+            }
+        }
+        /* Активная ссылка в меню */
+        .nav-menu .active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ===== ШАПКА ===== -->
     <header>
         <div class="container header-inner">
-            <div class="logo"><span class="logo-icon">🚛</span><span class="logo-text">Junk & Move</span></div>
-            <nav><ul class="nav-menu">
-                <li><a href="junk-removal.html">Junk Removal</a></li>
-                <li><a href="movers.html">Movers</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul></nav>
-            <a href="tel:+1234567890" class="phone-btn">📞 +1 234 567 890</a>
-            <button class="burger" id="burger">☰</button>
+            <div class="logo">
+                <i class="fas fa-truck"></i>
+                <span>Junk & Move</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html" class="active">Цены</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+1234567890" class="phone-btn"><i class="fas fa-phone"></i> +1 234 567 890</a>
+            <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <section class="page-content" style="padding:60px 0;">
+    <!-- ===== ЗАГОЛОВОК ===== -->
+    <section class="prices-hero">
         <div class="container">
-            <h1>📋 Наши цены</h1>
-            <p style="font-size:1.2rem;color:#555;max-width:700px;">Прозрачные цены без скрытых платежей. Платите только за то, что забираем.</p>
-
-            <h2 style="margin-top:40px;">🗑️ Junk Removal (вывоз мусора)</h2>
-            <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <thead>
-                    <tr style="background:#2F5597;color:#fff;">
-                        <th style="padding:14px 20px;text-align:left;">Загрузка грузовика</th>
-                        <th style="padding:14px 20px;text-align:left;">Описание</th>
-                        <th style="padding:14px 20px;text-align:right;">Цена (CAD)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">Минимальный вызов</td><td>1–2 предмета (диван, холодильник)</td><td style="text-align:right;">$99</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">¼ кузова</td><td>1 комната или небольшой гараж</td><td style="text-align:right;">$150</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">½ кузова</td><td>2–3 комнаты или стандартный гараж</td><td style="text-align:right;">$275</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">¾ кузова</td><td>3+ комнаты, подвал, крупная уборка</td><td style="text-align:right;">$325</td></tr>
-                    <tr><td style="padding:12px 20px;">Полный кузов</td><td>Полный дом, коммерческий вывоз</td><td style="text-align:right;">$400</td></tr>
-                </tbody>
-            </table>
-
-            <h2 style="margin-top:40px;">🚚 Movers (переезды)</h2>
-            <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <thead>
-                    <tr style="background:#2F5597;color:#fff;">
-                        <th style="padding:14px 20px;text-align:left;">Услуга</th>
-                        <th style="padding:14px 20px;text-align:right;">Цена</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">Команда: 2 грузчика + грузовик (час)</td><td style="text-align:right;">$150</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">Дополнительный грузчик (час)</td><td style="text-align:right;">$35</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">Упаковка вещей (1 упаковщик, час)</td><td style="text-align:right;">$65</td></tr>
-                    <tr><td style="padding:12px 20px;">1-комнатная квартира (фиксированная цена)</td><td style="text-align:right;">$450</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td style="padding:12px 20px;">2-комнатная квартира (фиксированная цена)</td><td style="text-align:right;">$1,000</td></tr>
-                    <tr><td style="padding:12px 20px;">3-комнатная квартира (фиксированная цена)</td><td style="text-align:right;">$1,500</td></tr>
-                </tbody>
-            </table>
-
-            <h2 style="margin-top:40px;">🎁 Комбо-пакеты (экономия до 15%)</h2>
-            <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <thead>
-                    <tr style="background:#2F5597;color:#fff;">
-                        <th style="padding:14px 20px;text-align:left;">Пакет</th>
-                        <th style="padding:14px 20px;text-align:center;">Junk Removal</th>
-                        <th style="padding:14px 20px;text-align:center;">Movers</th>
-                        <th style="padding:14px 20px;text-align:right;">Цена</th>
-                        <th style="padding:14px 20px;text-align:right;">Экономия</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid #eee;"><td>Лёгкий переезд</td><td style="text-align:center;">¼ кузова</td><td style="text-align:center;">1-комнатная</td><td style="text-align:right;">$625</td><td style="text-align:right;">$75</td></tr>
-                    <tr style="border-bottom:1px solid #eee;"><td>Стандартный переезд</td><td style="text-align:center;">½ кузова</td><td style="text-align:center;">2-комнатная</td><td style="text-align:right;">$1,275</td><td style="text-align:right;">$125</td></tr>
-                    <tr><td>Полный сервис</td><td style="text-align:center;">Полный кузов</td><td style="text-align:center;">Дом 100–200 м²</td><td style="text-align:right;">$2,900</td><td style="text-align:right;">$200</td></tr>
-                </tbody>
-            </table>
-
-            <div style="background:#f0f4fc;padding:30px;border-radius:16px;margin-top:40px;text-align:center;">
-                <p style="font-size:1.1rem;">💰 <strong>Цены указаны в CAD. Все налоги включены.</strong></p>
-                <p style="color:#555;">Точная стоимость — после бесплатной оценки на месте.</p>
-                <a href="contacts.html" class="btn btn-primary" style="margin-top:16px;">Заказать оценку</a>
-            </div>
+            <h1><i class="fas fa-tags" style="color: var(--accent);"></i> Наши цены</h1>
+            <p>Прозрачные цены без скрытых платежей. Платите только за то, что забираем.</p>
         </div>
     </section>
 
+    <!-- ===== JUNK REMOVAL ===== -->
+    <div class="container">
+        <h2><i class="fas fa-trash-alt"></i> Junk Removal (вывоз мусора)</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Загрузка грузовика</th>
+                        <th>Описание</th>
+                        <th>Цена (CAD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Минимальный вызов</td><td>1–2 предмета (диван, холодильник)</td><td class="price-col">$99</td></tr>
+                    <tr><td>¼ кузова</td><td>1 комната или небольшой гараж</td><td class="price-col">$150</td></tr>
+                    <tr><td>½ кузова</td><td>2–3 комнаты или стандартный гараж</td><td class="price-col">$275</td></tr>
+                    <tr><td>¾ кузова</td><td>3+ комнаты, подвал, крупная уборка</td><td class="price-col">$325</td></tr>
+                    <tr><td>Полный кузов</td><td>Полный дом, коммерческий вывоз</td><td class="price-col">$400</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== MOVERS ===== -->
+        <h2 style="margin-top: 40px;"><i class="fas fa-truck-moving"></i> Movers (переезды)</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Команда: 2 грузчика + грузовик (час)</td><td class="price-col">$150</td></tr>
+                    <tr><td>Дополнительный грузчик (час)</td><td class="price-col">$35</td></tr>
+                    <tr><td>Упаковка вещей (1 упаковщик, час)</td><td class="price-col">$65</td></tr>
+                    <tr><td>1-комнатная квартира (фиксированная цена)</td><td class="price-col">$450</td></tr>
+                    <tr><td>2-комнатная квартира (фиксированная цена)</td><td class="price-col">$1,000</td></tr>
+                    <tr><td>3-комнатная квартира (фиксированная цена)</td><td class="price-col">$1,500</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== КОМБО-ПАКЕТЫ ===== -->
+        <h2 style="margin-top: 40px;"><i class="fas fa-gift"></i> Комбо-пакеты (экономия до 15%)</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Пакет</th>
+                        <th class="center-col">Junk Removal</th>
+                        <th class="center-col">Movers</th>
+                        <th>Цена</th>
+                        <th>Экономия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Лёгкий переезд</td><td class="center-col">¼ кузова</td><td class="center-col">1-комнатная</td><td class="price-col">$625</td><td class="price-col">$75</td></tr>
+                    <tr><td>Стандартный переезд</td><td class="center-col">½ кузова</td><td class="center-col">2-комнатная</td><td class="price-col">$1,275</td><td class="price-col">$125</td></tr>
+                    <tr><td>Полный сервис</td><td class="center-col">Полный кузов</td><td class="center-col">Дом 100–200 м²</td><td class="price-col">$2,900</td><td class="price-col">$200</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== ПРИМЕЧАНИЕ ===== -->
+        <div class="pricing-note">
+            <p><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="highlight">Цены указаны в CAD. Все налоги включены.</span></p>
+            <p style="margin-top: 8px;">Точная стоимость — после бесплатной оценки на месте.</p>
+        </div>
+
+        <!-- ===== CTA ===== -->
+        <div class="cta-prices">
+            <h2><i class="fas fa-calculator"></i> Нужна точная оценка?</h2>
+            <p>Оставьте заявку — мы приедем и назовём цену бесплатно.</p>
+            <a href="contacts.html" class="btn btn-large"><i class="fas fa-phone"></i> Заказать оценку</a>
+        </div>
+    </div>
+
+    <!-- ===== ПОДВАЛ ===== -->
     <footer>
         <div class="container footer-inner">
-            <div class="footer-col"><h3>Junk & Move</h3><p>Профессиональный вывоз мусора и переезды в Канаде.</p></div>
-            <div class="footer-col"><h4>Услуги</h4><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="movers.html">Movers</a></li><li><a href="prices.html">Цены</a></li></ul></div>
-            <div class="footer-col"><h4>Контакты</h4><p>📞 +1 234 567 890</p><p>✉️ info@junkandmove.ca</p><p>📍 Торонто, Канада</p></div>
-            <div class="footer-col"><h4>Мы в соцсетях</h4><div class="social-links"><a href="#">Instagram</a> <a href="#">TikTok</a> <a href="#">Facebook</a></div></div>
+            <div class="footer-col">
+                <h3><i class="fas fa-truck" style="color: var(--accent);"></i> Junk & Move</h3>
+                <p>Профессиональный вывоз мусора и переезды в Канаде.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@junkandmove.ca</p>
+                <p><i class="fas fa-map-marker-alt"></i> Торонто, Канада</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Junk & Move. Все права защищены.</p></div>
+        <div class="footer-bottom">
+            <p>© 2026 Junk & Move. Все права защищены.</p>
+        </div>
     </footer>
+
+    <!-- ===== ПЛАВАЮЩИЕ ИКОНКИ ===== -->
+    <div class="floating-social">
+        <a href="https://wa.me/1234567890" class="wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/junkandmove" class="tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
