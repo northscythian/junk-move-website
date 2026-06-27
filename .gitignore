@@ -1,3 +1,4 @@
+cat > .gitignore << 'EOF'
 # Temporary files
 *.tmp
 *.log
@@ -13,7 +14,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Node modules
+# Node modules (если появятся)
 node_modules/
 
 # Python
@@ -22,3 +23,4 @@ __pycache__/
 
 # Excel temp
 ~$*.xlsx
+EOF

@@ -6,8 +6,6 @@
     <title>Цены — Junk & Move</title>
     <meta name="description" content="Прозрачные цены на вывоз мусора и переезды в Канаде. Никаких скрытых платежей. Стоимость зависит от объёма и времени." />
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Цены — Junk & Move" />
     <meta property="og:description" content="Прозрачные цены на вывоз мусора и переезды в Канаде. Никаких скрытых платежей." />
@@ -32,7 +30,127 @@
     <!-- Основные стили -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Стили вынесены в css/style.css -->
+    <!-- Дополнительные стили для этой страницы -->
+    <style>
+        .prices-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .prices-hero h1 {
+            margin-bottom: 12px;
+        }
+        .prices-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 30px 0 50px;
+        }
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            min-width: 500px;
+        }
+        .table-wrap th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .table-wrap td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eaeef2;
+        }
+        .table-wrap tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .table-wrap .price-col {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .table-wrap .center-col {
+            text-align: center;
+        }
+        .pricing-note {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 30px;
+        }
+        .pricing-note p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .pricing-note .highlight {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .cta-prices {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-prices h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .cta-prices p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .cta-prices .btn {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        .cta-prices .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .prices-hero {
+                padding: 40px 0 20px;
+            }
+            .table-wrap table {
+                font-size: 0.9rem;
+                min-width: 400px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 10px 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .table-wrap table {
+                font-size: 0.8rem;
+                min-width: 320px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 8px 10px;
+            }
+        }
+        /* Активная ссылка в меню */
+        .nav-menu .active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
+    </style>
 </head>
 <body>
 
@@ -58,7 +176,7 @@
     </header>
 
     <!-- ===== ЗАГОЛОВОК ===== -->
-    <section class="page-hero">
+    <section class="prices-hero">
         <div class="container">
             <h1><i class="fas fa-tags" style="color: var(--accent);"></i> Наши цены</h1>
             <p>Прозрачные цены без скрытых платежей. Платите только за то, что забираем.</p>
@@ -136,7 +254,7 @@
         </div>
 
         <!-- ===== CTA ===== -->
-        <div class="cta-banner">
+        <div class="cta-prices">
             <h2><i class="fas fa-calculator"></i> Нужна точная оценка?</h2>
             <p>Оставьте заявку — мы приедем и назовём цену бесплатно.</p>
             <a href="contacts.html" class="btn btn-large"><i class="fas fa-phone"></i> Заказать оценку</a>

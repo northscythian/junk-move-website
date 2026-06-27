@@ -6,8 +6,6 @@
     <title>Переезды (Movers) — Junk & Move</title>
     <meta name="description" content="Профессиональные переезды в Канаде: квартирные, офисные, с упаковкой и сборкой мебели. Бережно, аккуратно, с фиксированной ценой." />
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Переезды (Movers) — Junk & Move" />
     <meta property="og:description" content="Профессиональные переезды в Канаде: квартирные, офисные, с упаковкой и сборкой мебели." />
@@ -36,7 +34,116 @@
     <!-- Основные стили -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Стили вынесены в css/style.css -->
+    <!-- Дополнительные стили для этой страницы -->
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .service-hero h1 {
+            margin-bottom: 12px;
+        }
+        .service-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0 50px;
+        }
+        .service-grid-item {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: all var(--transition);
+            border: 1px solid transparent;
+        }
+        .service-grid-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+        .service-grid-item i {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .service-grid-item h3 {
+            margin-bottom: 8px;
+        }
+        .service-grid-item p {
+            margin: 0;
+        }
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0 50px;
+        }
+        .reasons-grid .reason {
+            background: var(--bg-light);
+            padding: 18px 22px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .reasons-grid .reason i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        .cta-movers {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .cta-movers h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .cta-movers p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .cta-movers .btn {
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+        .cta-movers .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Активная ссылка в меню */
+        .nav-menu .active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
+    </style>
 </head>
 <body>
 
@@ -62,7 +169,7 @@
     </header>
 
     <!-- ===== ЗАГОЛОВОК ===== -->
-    <section class="page-hero">
+    <section class="service-hero">
         <div class="container">
             <h1><i class="fas fa-truck-moving" style="color: var(--accent);"></i> Переезды (Moving Services)</h1>
             <p>Квартирные и офисные переезды. Поможем с упаковкой, разборкой и сборкой мебели. Бережно и аккуратно.</p>
@@ -71,7 +178,7 @@
 
     <!-- ===== ВИДЫ ПЕРЕЕЗДОВ ===== -->
     <div class="container">
-        <div class="service-grid-3">
+        <div class="service-grid">
             <div class="service-grid-item">
                 <i class="fas fa-home"></i>
                 <h3>Квартирные переезды</h3>
@@ -103,7 +210,7 @@
 
     <!-- ===== CTA ===== -->
     <div class="container">
-        <div class="cta-banner">
+        <div class="cta-movers">
             <h2><i class="fas fa-calendar-check"></i> Планируете переезд?</h2>
             <p>Мы сделаем его простым и быстрым</p>
             <a href="contacts.html" class="btn btn-large"><i class="fas fa-phone"></i> Заказать переезд</a>
