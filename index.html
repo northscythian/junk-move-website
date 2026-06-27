@@ -4,32 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Junk & Move — Вывоз мусора и переезды в Канаде</title>
+    <meta name="description" content="Профессиональный вывоз мусора и услуги переезда в Канаде. Честные цены, экологичная утилизация, работаем быстро.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- ШАПКА -->
     <header>
         <div class="container header-inner">
-            <div class="logo"><span class="logo-icon">🚛</span><span class="logo-text">Junk & Move</span></div>
-            <nav><ul class="nav-menu">
-                <li><a href="junk-removal.html">Junk Removal</a></li>
-                <li><a href="movers.html">Movers</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul></nav>
-            <a href="tel:+1234567890" class="phone-btn">📞 +1 234 567 890</a>
-            <button class="burger" id="burger">☰</button>
+            <div class="logo">
+                <i class="fas fa-truck"></i>
+                <span>Junk & Move</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+1234567890" class="phone-btn"><i class="fas fa-phone"></i> +1 234 567 890</a>
+            <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
+    <!-- ГЕРОЙ -->
     <section class="hero">
         <div class="container hero-inner">
             <div class="hero-text">
                 <h1>Вывоз мусора и переезды <span>в один клик</span></h1>
                 <p>Профессионально, честно, с заботой об экологии. Работаем в Канаде.</p>
                 <div class="hero-buttons">
-                    <a href="contacts.html" class="btn btn-primary">💰 Заказать расчёт</a>
-                    <a href="prices.html" class="btn btn-outline">📋 Посмотреть цены</a>
+                    <a href="contacts.html" class="btn btn-primary"><i class="fas fa-calculator"></i> Заказать расчёт</a>
+                    <a href="prices.html" class="btn btn-outline"><i class="fas fa-list"></i> Посмотреть цены</a>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+                    <a href="https://wa.me/1234567890" class="btn btn-small" style="background:#25D366; color:#fff;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://t.me/junkandmove" class="btn btn-small" style="background:#0088cc; color:#fff;" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -38,55 +52,140 @@
         </div>
     </section>
 
+    <!-- ПРЕИМУЩЕСТВА -->
     <section class="advantages">
         <div class="container">
             <h2>Почему выбирают нас</h2>
             <div class="advantages-grid">
-                <div class="advantage-item"><div class="advantage-icon">🕐</div><h3>Приедем в тот же день</h3><p>Работаем быстро. Заявка утром — вывоз днём.</p></div>
-                <div class="advantage-item"><div class="advantage-icon">💰</div><h3>Честные цены</h3><p>Никаких скрытых платежей. Платите за объём или время.</p></div>
-                <div class="advantage-item"><div class="advantage-icon">♻️</div><h3>Экологичная утилизация</h3><p>Сортируем, перерабатываем и жертвуем до 70% вещей.</p></div>
-                <div class="advantage-item"><div class="advantage-icon">🛡️</div><h3>Страховка и лицензии</h3><p>Работаем официально. Вы защищены.</p></div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Приедем в тот же день</h3>
+                    <p>Работаем быстро. Заявка утром — вывоз днём.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3>Честные цены</h3>
+                    <p>Никаких скрытых платежей. Платите за объём или время.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Экологичная утилизация</h3>
+                    <p>Сортируем, перерабатываем и жертвуем до 70% вещей.</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Страховка и лицензии</h3>
+                    <p>Работаем официально. Вы защищены.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- СТАТИСТИКА -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <p>Довольных клиентов</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <p>Положительных отзывов</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4.9★</span>
+                <p>Средний рейтинг</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ КРАТКО -->
     <section class="services-preview">
         <div class="container">
             <h2>Наши услуги</h2>
             <div class="services-grid">
-                <div class="service-card"><div class="service-icon">🗑️</div><h3>Junk Removal</h3><p>Вывозим любой мусор: старая мебель, стройотходы, электроника, хлам из гаража.</p><a href="junk-removal.html" class="btn btn-small">Подробнее →</a></div>
-                <div class="service-card"><div class="service-icon">🚚</div><h3>Moving Services</h3><p>Квартирные и офисные переезды. Упаковка, разборка, сборка мебели.</p><a href="movers.html" class="btn btn-small">Подробнее →</a></div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-trash-alt"></i></div>
+                    <h3>Junk Removal</h3>
+                    <p>Вывозим любой мусор: старая мебель, стройотходы, электроника, хлам из гаража.</p>
+                    <a href="junk-removal.html" class="btn btn-small btn-outline">Подробнее →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
+                    <h3>Moving Services</h3>
+                    <p>Квартирные и офисные переезды. Упаковка, разборка, сборка мебели.</p>
+                    <a href="movers.html" class="btn btn-small btn-outline">Подробнее →</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ОТЗЫВЫ -->
     <section class="testimonials">
         <div class="container">
             <h2>Что говорят клиенты</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-item"><p>"Заказала вывоз мусора после ремонта. Приехали в тот же день, всё забрали, площадку подмели. Рекомендую!"</p><span class="testimonial-author">— Анна, Торонто</span></div>
-                <div class="testimonial-item"><p>"Отличная команда. Переезд прошёл гладко, вещи не поцарапали, помогли с упаковкой. Буду обращаться ещё."</p><span class="testimonial-author">— Михаил, Ванкувер</span></div>
+                <div class="testimonial-item">
+                    <p>"Заказала вывоз мусора после ремонта. Приехали в тот же день, всё забрали, площадку подмели. Рекомендую!"</p>
+                    <span class="testimonial-author">— Анна, Торонто</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Отличная команда. Переезд прошёл гладко, вещи не поцарапали, помогли с упаковкой. Буду обращаться ещё."</p>
+                    <span class="testimonial-author">— Михаил, Ванкувер</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta">
         <div class="container">
             <h2>Готовы к переезду или уборке?</h2>
             <p>Оставьте заявку — мы приедем, оценим объём и назовём точную цену. Бесплатно.</p>
-            <a href="contacts.html" class="btn btn-primary btn-large">📞 Связаться с нами</a>
+            <a href="contacts.html" class="btn btn-primary btn-large"><i class="fas fa-phone"></i> Связаться с нами</a>
         </div>
     </section>
 
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="container footer-inner">
-            <div class="footer-col"><h3>Junk & Move</h3><p>Профессиональный вывоз мусора и переезды в Канаде.</p></div>
-            <div class="footer-col"><h4>Услуги</h4><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="movers.html">Movers</a></li><li><a href="prices.html">Цены</a></li></ul></div>
-            <div class="footer-col"><h4>Контакты</h4><p>📞 +1 234 567 890</p><p>✉️ info@junkandmove.ca</p><p>📍 Торонто, Канада</p></div>
-            <div class="footer-col"><h4>Мы в соцсетях</h4><div class="social-links"><a href="#">Instagram</a> <a href="#">TikTok</a> <a href="#">Facebook</a></div></div>
+            <div class="footer-col">
+                <h3><i class="fas fa-truck" style="color: var(--accent);"></i> Junk & Move</h3>
+                <p>Профессиональный вывоз мусора и переезды в Канаде.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@junkandmove.ca</p>
+                <p><i class="fas fa-map-marker-alt"></i> Торонто, Канада</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Junk & Move. Все права защищены.</p></div>
+        <div class="footer-bottom">
+            <p>© 2026 Junk & Move. Все права защищены.</p>
+        </div>
     </footer>
+
+    <!-- Плавающие иконки -->
+    <div class="floating-social">
+        <a href="https://wa.me/1234567890" class="wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/junkandmove" class="tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

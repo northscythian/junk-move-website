@@ -4,65 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты — Junk & Move</title>
+    <meta name="description" content="Свяжитесь с нами для вывоза мусора или переезда в Канаде. WhatsApp, Telegram, звонок или форма.">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Дополнительные стили только для страницы контактов */
+        .contacts-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contacts-hero h1 {
+            margin-bottom: 12px;
+        }
+        .contacts-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 40px 0 60px;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .contact-info-item i {
+            font-size: 1.4rem;
+            color: var(--primary);
+            width: 30px;
+            text-align: center;
+            margin-top: 4px;
+        }
+        .contact-info-item strong {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .contact-info-item span {
+            color: var(--text-gray);
+        }
+        .contact-form-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form-card label {
+            font-weight: 600;
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+        .contact-form-card input,
+        .contact-form-card select,
+        .contact-form-card textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color var(--transition);
+            background: var(--bg-light);
+        }
+        .contact-form-card input:focus,
+        .contact-form-card select:focus,
+        .contact-form-card textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.1);
+        }
+        .contact-form-card textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form-card .btn {
+            margin-top: 24px;
+            width: 100%;
+            justify-content: center;
+        }
+        .social-buttons-inline {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .social-buttons-inline .btn {
+            flex: 1;
+            min-width: 140px;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .contact-form-card {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- ШАПКА (такая же, как на всех страницах) -->
     <header>
         <div class="container header-inner">
-            <div class="logo"><span class="logo-icon">🚛</span><span class="logo-text">Junk & Move</span></div>
-            <nav><ul class="nav-menu">
-                <li><a href="junk-removal.html">Junk Removal</a></li>
-                <li><a href="movers.html">Movers</a></li>
-                <li><a href="prices.html">Цены</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul></nav>
-            <a href="tel:+1234567890" class="phone-btn">📞 +1 234 567 890</a>
-            <button class="burger" id="burger">☰</button>
+            <div class="logo">
+                <i class="fas fa-truck"></i>
+                <span>Junk & Move</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+1234567890" class="phone-btn"><i class="fas fa-phone"></i> +1 234 567 890</a>
+            <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <section class="contacts-page" style="padding:60px 0;">
+    <!-- ЗАГОЛОВОК -->
+    <section class="contacts-hero">
         <div class="container">
-            <h1>Свяжитесь с нами</h1>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;">
-                <div>
-                    <h2>Контакты</h2>
-                    <p>📞 +1 234 567 890</p>
-                    <p>✉️ info@junkandmove.ca</p>
-                    <p>📍 Торонто, Канада</p>
-                    <p>🕐 Пн–Вс: 8:00 – 20:00</p>
-                </div>
-                <div>
-                    <form action="https://formspree.io/f/ваш_ключ" method="POST">
-                        <label for="name">Ваше имя *</label>
-                        <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
-                        <label for="phone">Телефон *</label>
-                        <input type="tel" id="phone" name="phone" required style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
-                        <label for="service">Услуга</label>
-                        <select id="service" name="service" style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
-                            <option value="junk">Junk Removal</option>
-                            <option value="moving">Moving</option>
-                            <option value="both">И то, и другое</option>
-                        </select>
-                        <label for="message">Сообщение</label>
-                        <textarea id="message" name="message" rows="4" style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;"></textarea>
-                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
-                    </form>
-                </div>
-            </div>
+            <h1><i class="fas fa-address-book" style="color: var(--accent);"></i> Свяжитесь с нами</h1>
+            <p>Ответим на все вопросы, рассчитаем стоимость и согласуем удобное время.</p>
         </div>
     </section>
 
+    <!-- ОСНОВНОЙ БЛОК -->
+    <div class="container">
+        <div class="contact-grid">
+            <!-- ЛЕВАЯ КОЛОНКА: КОНТАКТЫ -->
+            <div>
+                <h2 style="margin-bottom: 24px;">Наши контакты</h2>
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Телефон</strong>
+                        <span><a href="tel:+1234567890" style="color: var(--primary); text-decoration: none;">+1 234 567 890</a></span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <span><a href="mailto:info@junkandmove.ca" style="color: var(--primary); text-decoration: none;">info@junkandmove.ca</a></span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Адрес</strong>
+                        <span>Торонто, Канада</span>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Часы работы</strong>
+                        <span>Пн–Вс: 8:00 – 20:00</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px; margin-bottom: 8px;">Напишите нам в мессенджеры</h3>
+                <div class="social-buttons-inline">
+                    <a href="https://wa.me/1234567890" class="btn" style="background: #25D366; color: #fff;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://t.me/junkandmove" class="btn" style="background: #0088cc; color: #fff;" target="_blank">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                </div>
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА: ФОРМА -->
+            <div class="contact-form-card">
+                <h2 style="margin-top: 0; margin-bottom: 8px;">Отправьте заявку</h2>
+                <p style="margin-bottom: 20px;">Заполните форму — мы перезвоним в течение 30 минут.</p>
+                <form action="https://formspree.io/f/your_key" method="POST">
+                    <label for="name"><i class="fas fa-user"></i> Ваше имя *</label>
+                    <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+
+                    <label for="phone"><i class="fas fa-phone"></i> Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890">
+
+                    <label for="service"><i class="fas fa-concierge-bell"></i> Услуга</label>
+                    <select id="service" name="service">
+                        <option value="junk">Junk Removal (вывоз мусора)</option>
+                        <option value="moving">Moving (переезд)</option>
+                        <option value="both">И то, и другое</option>
+                    </select>
+
+                    <label for="message"><i class="fas fa-comment"></i> Сообщение</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Опишите, что вам нужно..."></textarea>
+
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПОДВАЛ (такой же, как на всех страницах) -->
     <footer>
         <div class="container footer-inner">
-            <div class="footer-col"><h3>Junk & Move</h3><p>Профессиональный вывоз мусора и переезды в Канаде.</p></div>
-            <div class="footer-col"><h4>Услуги</h4><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="movers.html">Movers</a></li><li><a href="prices.html">Цены</a></li></ul></div>
-            <div class="footer-col"><h4>Контакты</h4><p>📞 +1 234 567 890</p><p>✉️ info@junkandmove.ca</p><p>📍 Торонто, Канада</p></div>
-            <div class="footer-col"><h4>Мы в соцсетях</h4><div class="social-links"><a href="#">Instagram</a> <a href="#">TikTok</a> <a href="#">Facebook</a></div></div>
+            <div class="footer-col">
+                <h3><i class="fas fa-truck" style="color: var(--accent);"></i> Junk & Move</h3>
+                <p>Профессиональный вывоз мусора и переезды в Канаде.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="junk-removal.html">Junk Removal</a></li>
+                    <li><a href="movers.html">Movers</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@junkandmove.ca</p>
+                <p><i class="fas fa-map-marker-alt"></i> Торонто, Канада</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-bottom"><p>© 2026 Junk & Move. Все права защищены.</p></div>
+        <div class="footer-bottom">
+            <p>© 2026 Junk & Move. Все права защищены.</p>
+        </div>
     </footer>
+
+    <!-- Плавающие иконки мессенджеров -->
+    <div class="floating-social">
+        <a href="https://wa.me/1234567890" class="wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/junkandmove" class="tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
