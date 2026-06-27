@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Junk & Move</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="logo"><span class="logo-icon">🚛</span><span class="logo-text">Junk & Move</span></div>
+            <nav><ul class="nav-menu">
+                <li><a href="junk-removal.html">Junk Removal</a></li>
+                <li><a href="movers.html">Movers</a></li>
+                <li><a href="prices.html">Цены</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul></nav>
+            <a href="tel:+1234567890" class="phone-btn">📞 +1 234 567 890</a>
+            <button class="burger" id="burger">☰</button>
+        </div>
+    </header>
+
+    <section class="contacts-page" style="padding:60px 0;">
+        <div class="container">
+            <h1>Свяжитесь с нами</h1>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;">
+                <div>
+                    <h2>Контакты</h2>
+                    <p>📞 +1 234 567 890</p>
+                    <p>✉️ info@junkandmove.ca</p>
+                    <p>📍 Торонто, Канада</p>
+                    <p>🕐 Пн–Вс: 8:00 – 20:00</p>
+                </div>
+                <div>
+                    <form action="https://formspree.io/f/ваш_ключ" method="POST">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" required style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
+                        <label for="service">Услуга</label>
+                        <select id="service" name="service" style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;">
+                            <option value="junk">Junk Removal</option>
+                            <option value="moving">Moving</option>
+                            <option value="both">И то, и другое</option>
+                        </select>
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="4" style="width:100%;padding:10px;margin-bottom:16px;border:1px solid #ccc;border-radius:8px;"></textarea>
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-col"><h3>Junk & Move</h3><p>Профессиональный вывоз мусора и переезды в Канаде.</p></div>
+            <div class="footer-col"><h4>Услуги</h4><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="movers.html">Movers</a></li><li><a href="prices.html">Цены</a></li></ul></div>
+            <div class="footer-col"><h4>Контакты</h4><p>📞 +1 234 567 890</p><p>✉️ info@junkandmove.ca</p><p>📍 Торонто, Канада</p></div>
+            <div class="footer-col"><h4>Мы в соцсетях</h4><div class="social-links"><a href="#">Instagram</a> <a href="#">TikTok</a> <a href="#">Facebook</a></div></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Junk & Move. Все права защищены.</p></div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
